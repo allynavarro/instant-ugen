@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Del dine instants — intro, form, confirmation, submissions strip
+   ========================================================================== */
+
+.page-intro{
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+}
+.page-intro .wrap.split{ align-items: flex-start; }
+.page-intro .split-media .polaroid{ width: min(360px, 100%); transform: rotate(-2deg); }
+.mini-steps{ list-style: none; margin: 2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: mini; }
+.mini-steps li{ display: flex; gap: 1rem; align-items: flex-start; }
+.mini-steps li::before{
+  counter-increment: mini; content: counter(mini);
+  font-family: var(--f-display); font-size: 1.3rem; line-height: 1.6rem; width: 1.9rem; height: 1.9rem;
+  border-radius: 50%; background: var(--ink); color: var(--mint); display: flex; align-items: center; justify-content: center;
+  flex: none;
+}
+.mini-steps p{ margin: 0; color: var(--ink-soft); }
+.mini-steps strong{ display: block; color: var(--ink); }
+
+/* deadline strip */
+.deadline-strip{
+  margin-top: 2.2rem; display: flex; align-items: center; gap: .8rem;
+  font-weight: 700; font-size: var(--step-1); color: var(--mint-deep);
+}
+.deadline-strip svg{ width: 20px; height: 20px; flex: none; }
+
+/* ---- form section ---- */
+.form-section{ position: relative; }
+.form-wrap{
+  display: grid; grid-template-columns: 1fr; gap: 0; max-width: 760px; margin: 0 auto;
+}
+.form-card{
+  background: var(--paper); border-radius: var(--radius-l); padding: clamp(1.75rem, 4vw, 3rem);
+  box-shadow: var(--shadow-card); border: 1px solid var(--line); position: relative;
+}
+.field{ margin-bottom: 1.5rem; }
+.field label{ display: block; font-weight: 700; font-size: var(--step-1); margin-bottom: .5rem; }
+.field .hint{ font-weight: 500; color: var(--ink-soft); font-size: .85rem; margin-top: .4rem; }
+.field input[type="text"], .field input[type="email"], .field textarea{
+  width: 100%; font-family: var(--f-body); font-size: var(--step0); padding: .85em 1em;
+  border-radius: var(--radius-s); border: 1.5px solid var(--line); background: var(--blue-soft);
+  color: var(--ink); transition: border-color .2s, box-shadow .2s;
+}
+.field input:focus, .field textarea:focus{
+  outline: none; border-color: var(--mint-deep); box-shadow: 0 0 0 4px rgba(37,235,165,.25);
+}
+.field textarea{ min-height: 110px; resize: vertical; }
+.field.invalid input, .field.invalid textarea{ border-color: #E8534A; background: #FFF3F1; }
+.field .error{ display: none; color: #C43B32; font-size: .85rem; font-weight: 700; margin-top: .4rem; }
+.field.invalid .error{ display: block; }
+
+.two-col{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 1.5rem; }
+@media (max-width: 600px){ .two-col{ grid-template-columns: 1fr; } }
+
+/* file drop */
+.file-drop{
+  border: 2px dashed var(--line); border-radius: var(--radius-m); padding: 1.6rem;
+  text-align: center; cursor: pointer; background: var(--blue-soft); position: relative;
+  transition: border-color .2s, background .2s;
+}
+.file-drop.is-dragover{ border-color: var(--mint-deep); background: #DFFBEF; }
+.file-drop input{ position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.file-drop svg{ width: 30px; height: 30px; color: var(--mint-deep); margin-bottom: .5rem; }
+.file-drop .ft{ font-weight: 700; }
+.file-drop .fs{ font-size: .85rem; color: var(--ink-soft); margin-top: .2rem; }
+.file-preview{ margin-top: 1rem; display: none; }
+.file-preview.is-shown{ display: flex; align-items: center; gap: 1rem; }
+.file-preview img{ width: 78px; height: 78px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+.file-preview .name{ font-weight: 700; font-size: var(--step-1); word-break: break-all; }
+.file-preview button{
+  background: none; border: none; text-decoration: underline; font-weight: 700; font-size: .85rem;
+  color: var(--ink-soft); cursor: pointer; padding: 0;
+}
+
+.check-field{ display: flex; align-items: flex-start; gap: .7rem; }
+.check-field input{ margin-top: .3rem; width: 18px; height: 18px; accent-color: var(--mint-deep); flex: none; }
+.check-field label{ font-weight: 500; font-size: var(--step-1); color: var(--ink-soft); }
+.check-field a{ font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.form-submit{ margin-top: 2rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.form-note{ font-size: var(--step-1); color: var(--ink-soft); margin: 0; }
+
+/* confirmation state */
+.confirm{
+  display: none; text-align: center; padding: 2rem 0 1rem;
+}
+.confirm.is-shown{ display: block; }
+.form-card.is-confirmed .field, .form-card.is-confirmed .form-submit, .form-card.is-confirmed .check-field{ display: none; }
+.confirm-badge{
+  width: 74px; height: 74px; border-radius: 50%; background: var(--mint); margin: 0 auto 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.confirm-badge svg{ width: 34px; height: 34px; color: var(--deep); }
+.confirm h3{ font-size: var(--step2); margin-bottom: .6rem; }
+.confirm p{ color: var(--ink-soft); max-width: 44ch; margin: 0 auto; }
+.confirm .btn{ margin-top: 1.6rem; }
+
+/* recent submissions (local demo) */
+.recent{ margin-top: 3rem; display: none; }
+.recent.is-shown{ display: block; }
+.recent h3{ font-size: var(--step0); margin-bottom: 1rem; }
+.recent-strip{ display: flex; gap: 1rem; flex-wrap: wrap; }
+.recent-strip .polaroid{ width: 130px; }
+.recent-strip figcaption{ font-size: .9rem; }
+
+/* stats trio */
+.expect-trio{
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem;
+}
+@media (max-width: 700px){ .expect-trio{ grid-template-columns: 1fr; } }
+.expect-item{ text-align: left; }
+.expect-item .big{ font-family: var(--f-display); font-size: clamp(2.4rem,5vw,3.6rem); line-height: 1; color: var(--mint); }
+.expect-item p{ color: rgba(255,255,255,.72); margin: .4rem 0 0; max-width: 26ch; }

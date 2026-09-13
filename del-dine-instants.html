@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Del dine instants — Instant Ugen</title>
+<meta name="description" content="Upload dit instant foto og bliv en del af Instant Ugen. Du kan indsende op til fem bidrag.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/layout.css?v=3">
+<link rel="stylesheet" href="css/home.css?v=3">
+<link rel="stylesheet" href="css/form.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#main">Spring til indhold</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="images/logo.svg" alt="Instant Ugen" width="120" height="106">
+      <span class="visually-hidden">Instant Ugen — forside</span>
+    </a>
+    <div class="nav-scrim"></div>
+    <nav class="main-nav" aria-label="Hovednavigation">
+      <ul>
+        <li><a href="index.html#hvad">Om ugen</a></li>
+        <li><a href="del-dine-instants.html" aria-current="page">Del dit instant</a></li>
+        <li><a href="vindere-og-nominerede.html">Vindere &amp; nominerede</a></li>
+        <li><a href="info.html">Info</a></li>
+      </ul>
+      <a class="btn btn--mint btn--sm" href="#form">Til formularen</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Åbn menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-intro section section--paper">
+    <div class="wrap split">
+      <div class="split-copy reveal">
+        <p class="kicker">Del &amp; deltag</p>
+        <h1 style="font-size: var(--step3); margin-bottom: .5em;">Klar til at dele dit instant foto?</h1>
+        <p class="lede">Har du et instant foto klar til deling? Sådan er du med i Instant Ugen — det tager kun et par minutter.</p>
+        <ol class="mini-steps">
+          <li><p><strong>Fotografér eller scan</strong>Tag et billede af dit instant med din smartphone, eller scan det for den bedste kvalitet. Filen skal være 2–10 MB, i jpg/jpeg- eller webp-format.</p></li>
+          <li><p><strong>Upload og fortæl</strong>Upload billedet med dit navn, kontaktinfo og historien bag.</p></li>
+          <li><p><strong>Accepter vilkårene</strong>Du skal være over 18 år, og portrætterede skal have givet samtykke.</p></li>
+        </ol>
+        <div class="deadline-strip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+          Konkurrencen lukker søndag d. 18. oktober 2026
+        </div>
+      </div>
+      <div class="split-media reveal">
+        <figure class="polaroid">
+          <img src="images/heide/Cowboyjakke.jpg" alt="Nærbillede af en denimjakke, fotograferet på et instant-kamera.">
+          <figcaption>Din tur til at dele et instant</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="section form-section section--soft">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+        <p class="kicker" style="text-align:center;">Del dit instant</p>
+        <h2 class="poster-word" style="font-size: clamp(2.6rem, 8vw, 5.5rem);">Deltag</h2>
+      </div>
+
+      <div class="form-wrap reveal">
+        <div class="form-card" data-form-card>
+          <form data-contrib-form novalidate>
+            <div class="two-col">
+              <div class="field">
+                <label for="navn">Fulde navn</label>
+                <input type="text" id="navn" name="navn" autocomplete="name" required>
+                <p class="error">Skriv dit fulde navn.</p>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <p class="error">Skriv en gyldig e-mail.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="billede">Upload billede</label>
+              <div class="file-drop" data-file-drop>
+                <input type="file" id="billede" name="billede" accept="image/jpeg,image/webp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+                <p class="ft">Træk dit billede hertil, eller klik for at vælge</p>
+                <p class="fs">jpg, jpeg eller webp · 2–10 MB</p>
+              </div>
+              <div class="file-preview" data-file-preview>
+                <img src="" alt="">
+                <div>
+                  <p class="name"></p>
+                  <button type="button" data-file-remove>Fjern billede</button>
+                </div>
+              </div>
+              <p class="error">Upload et billede af dit instant.</p>
+            </div>
+
+            <div class="field">
+              <label for="titel">Titel på dit instant</label>
+              <input type="text" id="titel" name="titel" required>
+              <p class="error">Giv dit instant en titel.</p>
+            </div>
+
+            <div class="field">
+              <label for="beskrivelse">Beskrivelse/historie bag dit instant</label>
+              <textarea id="beskrivelse" name="beskrivelse" placeholder="Beskriv billedet, og hvordan du tog det, i en sætning eller to." required></textarea>
+              <p class="error">Fortæl kort historien bag billedet.</p>
+            </div>
+
+            <div class="field check-field">
+              <input type="checkbox" id="vilkaar" name="vilkaar" required>
+              <label for="vilkaar">Jeg har læst og accepterer <a href="vilkaar-og-betingelser.html" target="_blank" rel="noopener">vilkårene og betingelserne</a>.</label>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn--mint">Send dit instant</button>
+              <p class="form-note">Du kan indsende op til fem bidrag — brug formularen igen for hvert bidrag.</p>
+            </div>
+          </form>
+
+          <div class="confirm" data-confirm>
+            <div class="confirm-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3>Du er en instant champ, <span data-confirm-name>ven</span>!</h3>
+            <p>Tak for bidraget :-) Konkurrencen løber indtil søndag d. 18. oktober. Kort efter gennemgår vi alle billederne og annoncerer en vinder d. 15. november. Er du en af de heldige, kontakter vi dig via e-mail.</p>
+            <button class="btn btn--ghost" data-reset-form>Indsend et bidrag mere</button>
+          </div>
+        </div>
+
+        <div class="recent" data-recent>
+          <h3>Dine seneste bidrag på denne enhed</h3>
+          <div class="recent-strip" data-recent-strip></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep">
+    <div class="wrap">
+      <div class="split reveal">
+        <div class="split-copy">
+          <p class="kicker">Hvad sker der nu?</p>
+          <h2 style="font-size: var(--step2); margin-bottom:.6em;">Annoncering af vinderne</h2>
+          <p class="ink-soft">Vinderne af konkurrencen bliver annonceret på Instant Ugens officielle hjemmeside og på vores sociale medier. Ved at deltage giver du samtykke til, at dit navn offentliggøres, og at dine indsendte fotos bruges til at markedsføre Instant Ugen.</p>
+          <p class="ink-soft">Bidrag bliver gennemgået af undervisere fra Multimediedesign på EK. <a href="info.html#dommerne" style="color:var(--mint); font-weight:700;">Mød dommerne →</a></p>
+        </div>
+        <div>
+          <div class="expect-trio">
+            <div class="expect-item"><span class="big">5</span><p>bidrag kan du maksimalt sende ind</p></div>
+            <div class="expect-item"><span class="big">1</span><p>flot præmie til den vindende fotograf</p></div>
+            <div class="expect-item"><span class="big">18/10</span><p>er sidste frist for at deltage</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <p class="footer-word">Instant<br>Ugen</p>
+      <div class="footer-meta">
+        <p class="date">Uge 42 · 12.–18. oktober 2026</p>
+        <a class="btn btn--sm" style="background:var(--deep); border-color:var(--deep); color:var(--mint);" href="#form">Del dit instant</a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h3>Sider</h3>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="del-dine-instants.html">Del dine instants</a></li>
+          <li><a href="vindere-og-nominerede.html">Vindere &amp; nominerede</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="vilkaar-og-betingelser.html">Vilkår &amp; betingelser</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li><a href="mailto:hej@instantugen.dk">hej@instantugen.dk</a></li>
+          <li>EK — Erhvervsakademi København</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Følg med</h3>
+        <div class="socials">
+          <a href="#" aria-label="Instant Ugen på Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Instant Ugen på Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 8h-2a2 2 0 00-2 2v10M8 13h6"/><circle cx="12" cy="12" r="10"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-fine">
+      <p>© <span data-year>2026</span> Instant Ugen — et projekt af Multimediedesign, EK</p>
+      <a href="vilkaar-og-betingelser.html">Vilkår &amp; betingelser</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="js/main.js?v=3"></script>
+<script src="js/form.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "instant-ugen-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Instant Ugen — statisk website (ren HTML/CSS/JS, ingen build-step nødvendig)",
+  "scripts": {
+    "dev": "http-server . -p 8080 -c-1 -o",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
