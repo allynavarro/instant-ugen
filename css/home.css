@@ -24,7 +24,7 @@
   text-transform: uppercase;
   line-height: 0.86;
   font-size: clamp(3rem, 5.4vw + 1rem, 6.4rem);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
 }
 .hero .wrap {
   display: grid;
@@ -705,5 +705,869 @@
   .lightbox-prev,
   .lightbox-next {
     display: none;
+  }
+}
+
+/* ========================================================================== 
+   FIGMA PROTOTYPE MATCH — everything after the hero
+   Hero rules above are intentionally left untouched.
+   ========================================================================== */
+
+/* Shared editorial rhythm from the prototype */
+#hvad,
+#hvorfor,
+#sadan,
+#inspiration {
+  overflow: clip;
+}
+
+#hvad .wrap,
+#hvorfor .wrap,
+#sadan .wrap,
+#inspiration .wrap {
+  max-width: 1320px;
+}
+
+#hvad .kicker,
+#hvorfor .kicker,
+#sadan .kicker,
+#inspiration .kicker {
+  font-size: 0.78rem;
+  line-height: 1;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+/* =========================================
+   FIGMA – store Blackheat overskrifter
+   ========================================= */
+
+#sadan .section-head {
+  max-width: none;
+  width: 100%;
+}
+
+#sadan .section-head h2 {
+  font-family: "Blackheat", "Anton", "Arial Narrow", sans-serif;
+  font-weight: 400;
+  font-size: clamp(5rem, 11vw, 10rem);
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* ---------- 1. Hvad er Instant Ugen? ---------- */
+#hvad.section--stack {
+  z-index: 4;
+  margin-top: -1.5rem;
+  padding: clamp(5.5rem, 9vw, 9rem) 0 clamp(6rem, 10vw, 10rem);
+  background: #fefefe;
+  border-radius: 42px 42px 0 0;
+  box-shadow: 0 -24px 70px -34px rgba(11, 34, 34, 0.42);
+}
+
+#hvad .split {
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  gap: clamp(4rem, 9vw, 9rem);
+  align-items: center;
+}
+
+#hvad .split-copy {
+  max-width: 660px;
+}
+
+#hvad .kicker {
+  color: var(--mint-deep);
+  margin-bottom: 1.2rem;
+}
+
+#hvad h2 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  font-size: clamp(4.6rem, 8.5vw, 9.5rem) !important;
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+
+  max-width: 20ch;
+  margin: 0 0 2.1rem !important;
+}
+
+#hvad .split-copy > p:not(.kicker) {
+  font-size: clamp(1rem, 0.94rem + 0.2vw, 1.12rem);
+  line-height: 1.72;
+  max-width: 52ch;
+  color: #39413f;
+}
+
+#hvad .split-copy > p + p {
+  margin-top: 1.2rem;
+}
+
+#hvad .split-media {
+  position: relative;
+  min-height: 560px;
+  align-items: center;
+  justify-content: center;
+}
+
+#hvad .split-media::before {
+  content: "";
+  position: absolute;
+  width: min(32vw, 390px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blue);
+  right: 2%;
+  top: 1%;
+  z-index: 0;
+}
+
+#hvad .split-media::after {
+  content: "instant photo";
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  font-family: var(--f-hand);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  transform: rotate(-7deg);
+  color: var(--mint-deep);
+}
+
+#hvad .polaroid {
+  width: min(400px, 88%);
+  padding: 0.72rem 0.72rem 2.65rem;
+  transform: rotate(4deg) !important;
+  box-shadow: 0 32px 56px -28px rgba(11, 34, 34, 0.44);
+  position: relative;
+  z-index: 1;
+}
+
+#hvad .polaroid img {
+  aspect-ratio: 0.92 / 1;
+  object-fit: cover;
+}
+
+#hvad .polaroid figcaption {
+  font-size: 1.25rem;
+}
+
+/* ---------- 2. Hvorfor instant foto? ---------- */
+#hvorfor.section--deep {
+  background: #102e2c;
+  padding: clamp(6rem, 10vw, 10rem) 0;
+}
+
+#hvorfor .split.rev {
+  grid-template-columns: minmax(340px, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(4rem, 9vw, 9rem);
+  align-items: center;
+}
+
+#hvorfor .split-media {
+  position: relative;
+  min-height: 520px;
+  align-items: center;
+}
+
+#hvorfor .split-media::before {
+  content: "";
+  position: absolute;
+  width: min(31vw, 390px);
+  aspect-ratio: 1;
+  border: 2px solid rgba(37, 235, 165, 0.6);
+  border-radius: 50%;
+  left: 0;
+  bottom: 0;
+}
+
+#hvorfor .split-media .polaroid {
+  width: min(390px, 88%);
+  padding: 0.75rem 0.75rem 2.7rem;
+  transform: rotate(-4deg) !important;
+  position: relative;
+  z-index: 1;
+}
+
+#hvorfor .kicker {
+  margin-bottom: 1.15rem;
+}
+
+#hvorfor h2 {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-size: clamp(4rem, 7.4vw, 8.2rem) !important;
+  line-height: 0.84;
+  letter-spacing: 0.01em;
+  max-width: 8ch;
+  margin: 0 0 2rem !important;
+  color: var(--paper);
+}
+
+#hvorfor .split-copy p.ink-soft {
+  font-size: clamp(1rem, 0.95rem + 0.18vw, 1.1rem);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 58ch;
+}
+
+#hvorfor .timeline {
+  margin-top: clamp(5rem, 9vw, 8rem);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#hvorfor .timeline::before {
+  display: none;
+}
+
+#hvorfor .timeline-item {
+  padding: 2.2rem 1.7rem 1rem 0;
+  min-height: 190px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+#hvorfor .timeline-item:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+#hvorfor .timeline-item::before {
+  width: 10px;
+  height: 10px;
+  top: -6px;
+  border: 0;
+  background: var(--mint);
+}
+
+#hvorfor .timeline-item .yr {
+  font-size: clamp(2.4rem, 4vw, 4.1rem);
+  line-height: 0.9;
+  color: var(--mint);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#hvorfor .timeline-item p {
+  max-width: 24ch;
+  line-height: 1.55;
+}
+
+#hvorfor .size-compare {
+  margin-top: clamp(5rem, 8vw, 7rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#hvorfor .size-compare-head {
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+#hvorfor .size-compare-head h3 {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 4vw, 4rem) !important;
+  line-height: 0.92;
+  max-width: 9ch;
+}
+
+#hvorfor .size-bars {
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#hvorfor .size-bar {
+  align-items: flex-start;
+}
+
+#hvorfor .size-bar .swatch {
+  border: 0;
+  border-radius: 0;
+  background: var(--mint);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+#hvorfor .size-bar .label {
+  text-align: left;
+  max-width: 18ch;
+}
+
+/* ---------- 3. Sådan deltager du ---------- */
+#sadan.section--paper {
+  background: var(--mint);
+  padding: clamp(6rem, 10vw, 10rem) 0 clamp(6.5rem, 11vw, 10.5rem);
+}
+
+#sadan .section-head {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  column-gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+#sadan .section-head .kicker {
+  grid-column: 1 / -1;
+  color: #0b5944;
+  margin-bottom: 1.2rem;
+}
+
+#sadan .section-head h2 {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-size: clamp(4.6rem, 8.5vw, 9.5rem);
+  line-height: 0.82;
+  letter-spacing: 0, 5em;
+  max-width: 20ch;
+}
+
+#sadan .section-head .lede {
+  margin: 0 0 0.4rem;
+  color: #14372f;
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.28rem);
+  line-height: 1.6;
+}
+
+#sadan .steps {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 0;
+  border-top: 2px solid rgba(11, 34, 34, 0.65);
+  border-bottom: 2px solid rgba(11, 34, 34, 0.65);
+}
+
+#sadan .step {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(11, 34, 34, 0.28);
+  border-radius: 0;
+  padding: 2rem clamp(1.25rem, 2vw, 2rem) 2.6rem;
+  min-height: 310px;
+}
+
+#sadan .step:first-child {
+  padding-left: 0;
+}
+
+#sadan .step:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+#sadan .step .num {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--deep);
+  font-size: clamp(3.2rem, 5vw, 5.2rem);
+  margin-bottom: 2rem;
+}
+
+#sadan .step h3 {
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  max-width: 16ch;
+}
+
+#sadan .step p {
+  color: #163e34;
+  line-height: 1.62;
+  max-width: 28ch;
+}
+
+#sadan .steps-cta {
+  margin-top: 2.7rem;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#sadan .steps-cta .btn {
+  background: var(--deep);
+  color: var(--mint);
+  border-color: var(--deep);
+}
+
+#sadan .steps-cta p {
+  color: #163e34;
+  font-weight: 700;
+}
+
+/* ---------- 4. Inspiration / gallery ---------- */
+
+/* Galleri i fuld browserbredde */
+#inspiration .masonry {
+  width: 100vw;
+  max-width: none;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding-left: 0;
+  padding-right: 0;
+}
+#inspiration.section--deep {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(6rem, 9vw, 9rem) 0 clamp(7rem, 11vw, 11rem);
+}
+
+#inspiration .gallery-head {
+  display: block;
+  width: 100%;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+}
+
+#inspiration .gallery-head .kicker {
+  margin-bottom: 1rem;
+}
+
+#inspiration .poster-word {
+  font-family: var(--f-display);
+  font-size: clamp(8rem, 18vw, 18rem) !important;
+  line-height: 0.72 !important;
+  letter-spacing: 0;
+  white-space: nowrap;
+
+  color: var(--mint); /* ← DENNE */
+
+  display: inline-block;
+  transform: scaleX(1.32);
+  transform-origin: left center;
+  margin: 0;
+}
+
+#inspiration .gallery-head > p {
+  margin: 0 0 0.45rem;
+  line-height: 1.7;
+}
+
+#inspiration .masonry {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(0.8rem, 1.4vw, 1.4rem);
+  align-items: start;
+  margin-top: 0;
+}
+
+#inspiration .masonry .g-item {
+  margin: 0;
+  transform: rotate(var(--r, 0deg));
+}
+
+#inspiration .masonry .g-item:nth-child(8n + 1),
+#inspiration .masonry .g-item:nth-child(8n + 6) {
+  grid-column: span 3;
+}
+
+#inspiration .masonry .g-item:nth-child(8n + 2),
+#inspiration .masonry .g-item:nth-child(8n + 4),
+#inspiration .masonry .g-item:nth-child(8n + 7) {
+  grid-column: span 2;
+}
+
+#inspiration .masonry .g-item:nth-child(8n + 3),
+#inspiration .masonry .g-item:nth-child(8n + 5),
+#inspiration .masonry .g-item:nth-child(8n) {
+  grid-column: span 2;
+}
+
+#inspiration .masonry .polaroid {
+  padding: 0.5rem 0.5rem 1.8rem;
+  box-shadow: 0 14px 24px -12px rgba(0, 0, 0, 0.48);
+}
+
+#inspiration .masonry .g-item:nth-child(3n) {
+  margin-top: 2.4rem;
+}
+
+#inspiration .masonry .g-item:nth-child(5n) {
+  margin-top: 4rem;
+}
+
+#inspiration .masonry .g-item figcaption {
+  font-size: 0.82rem;
+}
+
+#inspiration .gallery-more {
+  margin-top: 4.5rem;
+}
+
+#inspiration .spotlight-head {
+  margin-top: clamp(7rem, 12vw, 11rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 3rem;
+}
+
+#inspiration .spotlight-head h3 {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-size: clamp(2.8rem, 5.5vw, 5.7rem) !important;
+  line-height: 0.86;
+  max-width: 10ch !important;
+}
+
+#inspiration .spotlight-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: visible;
+  gap: 0;
+  padding: 0;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#inspiration .spot-card {
+  width: auto;
+  min-height: 270px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0;
+  padding: 2rem 1.5rem 2rem 0;
+}
+
+#inspiration .spot-card + .spot-card {
+  padding-left: 1.5rem;
+}
+
+#inspiration .spot-card:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+#inspiration .spot-card .who {
+  color: var(--paper);
+  font-size: clamp(1.55rem, 2.5vw, 2.25rem);
+  line-height: 0.95;
+}
+
+#inspiration .spot-card p {
+  line-height: 1.6;
+}
+
+/* ---------- Footer closer to prototype ---------- */
+.site-footer {
+  background: var(--blue);
+}
+
+.site-footer .wrap {
+  max-width: 1320px;
+  padding-top: clamp(5rem, 9vw, 8rem);
+}
+
+.footer-word {
+  font-size: clamp(5rem, 13vw, 12rem);
+  line-height: 0.75;
+  letter-spacing: 0.01em;
+}
+
+.footer-top {
+  align-items: flex-end;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.footer-grid {
+  grid-template-columns: 1.2fr 1fr 1fr;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  #hvad .split,
+  #hvorfor .split.rev,
+  #sadan .section-head,
+  #inspiration .gallery-head {
+    grid-template-columns: 1fr;
+  }
+
+  #hvad h2,
+  #hvorfor h2,
+  #sadan .section-head h2 {
+    max-width: none;
+  }
+
+  #hvad .split-media,
+  #hvorfor .split-media {
+    min-height: 460px;
+  }
+
+  #sadan .steps,
+  #inspiration .spotlight-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #sadan .step:nth-child(2) {
+    border-right: 0;
+  }
+
+  #sadan .step:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(11, 34, 34, 0.28);
+  }
+
+  #inspiration .spot-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  #inspiration .spot-card:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  #inspiration .masonry {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  #inspiration .masonry .g-item,
+  #inspiration .masonry .g-item:nth-child(n) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 700px) {
+  #hvad.section--stack {
+    border-radius: 26px 26px 0 0;
+  }
+
+  #hvad .split-media,
+  #hvorfor .split-media {
+    min-height: 380px;
+  }
+
+  #hvad .split-media::before {
+    width: 260px;
+  }
+
+  #hvorfor .timeline,
+  #sadan .steps,
+  #inspiration .spotlight-strip {
+    grid-template-columns: 1fr;
+  }
+
+  #hvorfor .timeline {
+    border-top: 0;
+  }
+
+  #hvorfor .timeline-item {
+    min-height: 0;
+    border-right: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 1.7rem 0 1.8rem 2.1rem;
+  }
+
+  #hvorfor .timeline-item::before {
+    top: 2rem;
+    left: 0;
+  }
+
+  #hvorfor .size-bars {
+    justify-content: flex-start;
+  }
+
+  #sadan .step,
+  #sadan .step:first-child,
+  #sadan .step:last-child {
+    padding: 1.8rem 0 2rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(11, 34, 34, 0.28);
+    min-height: 0;
+  }
+
+  #sadan .step:last-child {
+    border-bottom: 0;
+  }
+
+  #inspiration .masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #inspiration .masonry .g-item,
+  #inspiration .masonry .g-item:nth-child(n) {
+    grid-column: span 1;
+    margin-top: 0;
+  }
+
+  #inspiration .spot-card,
+  #inspiration .spot-card + .spot-card,
+  #inspiration .spot-card:last-child {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 1.8rem 0;
+    min-height: 0;
+  }
+
+  #inspiration .spot-card:last-child {
+    border-bottom: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================================
+   HVORFOR INSTANT FOTO? — FIGMA SEKTION
+   ========================================================== */
+
+.why-instant {
+  background: var(--blue);
+  width: 100%;
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  background: var(--blue);
+
+  /* vigtigt når heroen er sticky */
+  isolation: isolate;
+}
+
+.why-instant__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  height: 100%;
+  /* min-height: 720px; */
+}
+
+.why-instant__copy {
+  position: relative;
+  padding: clamp(4rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-instant__title {
+  background: var(--paper);
+  width: fit-content;
+  margin-left: calc(clamp(2rem, 5vw, 5rem) * -1);
+  padding: 1.3rem clamp(2.5rem, 5vw, 5rem);
+}
+
+.why-instant__title h2 {
+  margin: 0;
+  font-family: var(--f-body);
+  font-size: clamp(1.6rem, 2.4vw, 2.8rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.why-instant__list {
+  list-style: none;
+  margin: clamp(4rem, 8vw, 7rem) 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.7rem);
+}
+
+.why-instant__list li {
+  position: relative;
+  padding-left: 3.8rem;
+
+  font-size: clamp(1.1rem, 1.5vw, 1.45rem);
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.why-instant__list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-52%);
+
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.why-instant__bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.why-instant__image {
+  min-height: 720px;
+  overflow: hidden;
+}
+
+.why-instant__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+  .why-instant__grid {
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .why-instant__copy {
+    padding: 3rem 2rem;
+  }
+
+  .why-instant__title {
+    margin-left: -2rem;
+    padding: 1rem 2rem;
+  }
+
+  .why-instant__image {
+    min-height: 600px;
+  }
+}
+
+/* ==========================================================
+   MOBIL
+   ========================================================== */
+
+@media (max-width: 700px) {
+  .why-instant__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-instant__copy {
+    min-height: auto;
+    padding: 3rem 1.25rem;
+  }
+
+  .why-instant__title {
+    margin-left: -1.25rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .why-instant__list {
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+
+  .why-instant__list li {
+    padding-left: 3rem;
+  }
+
+  .why-instant__bottom {
+    margin-top: 4rem;
+  }
+
+  .why-instant__image {
+    min-height: 520px;
   }
 }

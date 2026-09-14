@@ -122,7 +122,7 @@ h2,
 h3 {
   margin: 0;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.03em;
 }
 
 .eyebrow-date {
@@ -130,8 +130,9 @@ h3 {
   font-weight: 700;
   font-size: var(--step-1);
   letter-spacing: 0.02em;
-  color: var(--mint-deep);
+  color: var(--mint);
 }
+
 
 /* poster word: the recurring big Anton headline device */
 .poster-word {
