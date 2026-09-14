@@ -535,19 +535,21 @@
   flex-wrap: wrap;
 }
 
-.gallery-head h2 {
-  font-size: var(--step6);
-  line-height: 0.82;
-}
-
 .masonry {
   columns: 4 220px;
-  column-gap: 1.1rem;
+  column-gap: 1rem;
   margin-top: 2.6rem;
 }
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .masonry {
-    columns: 2 160px;
+    columns: 3 140px;
+    column-gap: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .masonry {
+    columns: 2 130px;
+    column-gap: 0.8rem;
   }
 }
 .masonry .g-item {
