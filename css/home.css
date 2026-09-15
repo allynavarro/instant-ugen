@@ -305,6 +305,9 @@
 .split-copy p {
   color: var(--ink-soft);
 }
+.split-copy .kicker {
+  color: var(--mint-deep);
+}
 .split-copy p + p {
   margin-top: 1em;
 }

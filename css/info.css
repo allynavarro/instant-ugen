@@ -125,6 +125,45 @@
   margin-top: 1.6em !important;
 }
 
+.photo-duo {
+  position: relative;
+  min-height: 300px;
+}
+.photo-duo .polaroid {
+  position: absolute;
+  margin: 0;
+  width: min(220px, 55%);
+}
+.photo-duo .duo-1 {
+  left: 2%;
+  top: 0;
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+.photo-duo .duo-2 {
+  right: 0;
+  bottom: 0;
+  width: min(190px, 48%);
+  transform: rotate(5deg);
+  z-index: 2;
+}
+@media (max-width: 820px) {
+  .photo-duo {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    min-height: 0;
+    margin-top: 2rem;
+  }
+  .photo-duo .polaroid {
+    position: static;
+    width: calc(50% - 0.6rem);
+    transform: none !important;
+  }
+}
+
 .sponsor-illustration {
   display: flex;
   justify-content: center;
